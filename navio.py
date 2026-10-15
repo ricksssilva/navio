@@ -34,7 +34,7 @@ class Jogo:
         pyxel.images[0].load(0, 0, "tabuleiro_200x200.png")
         # Jogador 2
         pyxel.images[1].load(0, 0, "tabuleiro_laranja_200x200.png")
-        # Tela inicial play (banco 2)
+        # Tela inicial play 
         pyxel.images[2].load(0, 0, "play2.png")
         
         pyxel.play(0, 0, loop=True)
@@ -122,7 +122,7 @@ class Jogo:
 
                             if (self.acertos_jogador_1 >= self.total_partes_navios):
                                 pyxel.stop(0) # para musica
-                                # Carrega a imagem de Game Over no banco 2 logo quando vence
+                                # Carrega a imagem de Game Over logo quando vence
                                 pyxel.images[2].load(0, 0, "GO_voltar_200x200.png")
                                 self.tela = "vitoria"
                             
@@ -145,7 +145,7 @@ class Jogo:
                      
                             if (self.acertos_jogador_2 >= self.total_partes_navios):
                                 pyxel.stop(0) # para musica
-                                # Carrega a imagem de Game Over no banco 2 logo quando vence
+                                # Carrega a imagem de Game Over quando vence
                                 pyxel.images[2].load(0, 0, "GO_voltar_200x200.png")
                                 self.tela = "vitoria" # fica no jogador 2 pois acertou
                             
@@ -157,7 +157,7 @@ class Jogo:
         # tela aonde mostra vitoria
         elif self.tela == "vitoria":
             if pyxel.btnp(pyxel.KEY_R):
-                # Recarrega a imagem de play original antes de reiniciar para o menu
+                # Recarrega a imagem de play original antes de reiniciar para o menu 
                 pyxel.images[2].load(0, 0, "play2.png")
                 self.reiniciar_jogo()
 
@@ -233,5 +233,7 @@ class Jogo:
                 
             # reinicia o jogo apertando R
             pyxel.text(230, 230, "pressione R para reiniciar", 7)
+
+
 
 Jogo()
